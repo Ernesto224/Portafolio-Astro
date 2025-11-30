@@ -1,0 +1,73 @@
+---
+import Navbar from "./ui/Navbar.astro";
+---
+
+<header
+  id="main-header"
+  class="fixed left-1/2 -translate-x-1/2 z-[100] backdrop-blur-xl border border-cian-resplandor-secundary/0 rounded-full transition-all duration-500 ease-in-out md:top-6 md:bottom-auto bottom-0 w-[80%]"
+>
+  <Navbar />
+</header>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  
+  gsap.registerPlugin(ScrollTrigger);
+
+  const header = document.getElementById("main-header");
+  const navbar = document.querySelector("nav");
+
+  if (header && navbar) {
+    // Rang #1
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "top top",
+      scrub: 1,
+      onEnter: () => {
+        header.classList.remove(
+          "w-[80%]",
+          "border-cian-resplandor-secundary/0"
+        );
+        header.classList.add("w-[60%]", "border-cian-resplandor-secundary/30");
+      },
+      onLeaveBack: () => {
+        header.classList.remove(
+          "w-[60%]",
+          "border-cian-resplandor-secundary/30"
+        );
+        header.classList.add("w-[80%]", "border-cian-resplandor-secundary/0");
+      },
+    });
+
+    // Rang #2
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "300px top",
+      scrub: 1,
+      onEnter: () => {
+        header.classList.remove("w-[60%]");
+        header.classList.add("w-[50%]");
+      },
+      onLeaveBack: () => {
+        header.classList.remove("w-[50%]");
+        header.classList.add("w-[60%]");
+      },
+    });
+
+    // Rang #3
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "900px top",
+      scrub: 1,
+      onEnter: () => {
+        header.classList.remove("w-[50%]");
+        header.classList.add("w-[40%]");
+      },
+      onLeaveBack: () => {
+        header.classList.remove("w-[40%]");
+        header.classList.add("w-[50%]");
+      },
+    });
+  }
+</script>

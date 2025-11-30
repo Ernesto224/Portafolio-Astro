@@ -1,0 +1,48 @@
+---
+import IconButton from "./ui/IconButton.astro";
+---
+
+<footer class="py-8 md:py-12 font-dongle">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <hr class="border-t border-texto-principal-suave/50 mb-4 md:mb-6" />
+
+    <div class="flex flex-col items-center justify-center gap-2 md:gap-3">
+      <div class="text-center space-y-1 md:space-y-2">
+        <div class="my-6 flex justify-center gap-4">
+          <IconButton
+            href="mailto:ev402648@gmail.com"
+            label="Email"
+            ariaLabel="Send email"
+          >
+            <i class="icon-[lucide--mail] w-10 h-10"></i>
+          </IconButton>
+
+          <IconButton
+            href="https://www.linkedin.com/in/ernesto224/"
+            label="LinkedIn"
+            ariaLabel="Open LinkedIn"
+          >
+            <i class="icon-[lucide--linkedin] w-10 h-10"></i>
+          </IconButton>
+
+          <IconButton
+            href="https://github.com/Ernesto224"
+            label="GitHub"
+            ariaLabel="Open GitHub"
+          >
+            <i class="icon-[lucide--github] w-10 h-10"></i>
+          </IconButton>
+        </div>
+        <p
+          class="text-xs md:text-sm lg:text-[1rem] font-light text-texto-principal-suave"
+        >
+          <strong class="text-purpura-tranquilo">Ernesto Vega Rodriguez</strong>
+          Copyright © 2025. Designed and Developed by
+          <strong class="text-purpura-tranquilo block sm:inline mt-1 sm:mt-0">
+            Ernesto Vega Rodriguez
+          </strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

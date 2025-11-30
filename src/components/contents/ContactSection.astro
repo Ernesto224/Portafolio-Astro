@@ -1,0 +1,27 @@
+---
+import ContactForm from "../react/ContactForm.tsx";
+---
+
+<section id="contact" class="py-28">
+  <div
+    class="container mx-auto px-6 lg:px-0 max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-start"
+  >
+    <div>
+      <h3 class="text-3xl font-light text-purpura-suave">Let's talk</h3>
+      <h2
+        class="text-5xl font-light leading-16 text-texto-claro-principal mt-3"
+      >
+        Contact
+      </h2>
+      <p
+        class="text-[1rem] font-light text-texto-principal-suave leading-7 mt-4"
+      >
+        Have a question or a project in mind? Feel free to reach out.
+      </p>
+    </div>
+
+    <div>
+      <ContactForm client:visible/>
+    </div>
+  </div>
+</section>

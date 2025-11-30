@@ -1,0 +1,96 @@
+---
+import type { AccordionItemsProps } from "../../types/types";
+
+const { title, text, icon } = Astro.props as AccordionItemsProps;
+---
+
+<div
+  class="accordion-container max-w-96 my-2 border border-purpura-tranquilo/60 rounded-xl overflow-hidden hvr-grow"
+>
+  <button
+    class="accordion-trigger w-full h-14 flex place-items-center gap-4 p-4 hover:bg-fondo-primario-tarjeta transition-colors duration-200 text-left"
+    aria-expanded="false"
+  >
+    <span class="flex-shrink-0 text-texto-principal-suave">
+      <i class=`${icon} w-8 h-8`></i>
+    </span>
+
+    <span class="flex-1 font-dongle text-texto-principal-suave">
+      {title}
+    </span>
+
+    <svg
+      class="accordion-arrow w-5 h-5 text-azul-nebulosa transition-transform duration-300 ease-in-out flex-shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </button>
+
+  <div
+    class="accordion-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out"
+  >
+    <div class="overflow-hidden">
+      <div class="p-4 text-[1rem] text-texto-principal-suave leading-relaxed">
+        {text}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const initAccordion = (): void => {
+    const accordions = document.querySelectorAll(".accordion-container");
+
+    accordions.forEach((accordion) => {
+      const trigger = accordion.querySelector(
+        ".accordion-trigger"
+      ) as HTMLButtonElement;
+      const content = accordion.querySelector(
+        ".accordion-content"
+      ) as HTMLElement;
+      const arrow = accordion.querySelector(".accordion-arrow") as SVGElement;
+
+      if (!trigger || !content || !arrow) return;
+
+      const toggleAccordion = (): void => {
+        const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+
+        if (isExpanded) {
+          // Colapsar
+          trigger.setAttribute("aria-expanded", "false");
+          content.classList.remove("grid-rows-[1fr]");
+          content.classList.add("grid-rows-[0fr]");
+          arrow.classList.remove("rotate-180");
+        } else {
+          // Expandir
+          trigger.setAttribute("aria-expanded", "true");
+          content.classList.remove("grid-rows-[0fr]");
+          content.classList.add("grid-rows-[1fr]");
+          arrow.classList.add("rotate-180");
+        }
+      };
+
+      trigger.addEventListener("click", toggleAccordion);
+    });
+  };
+
+  // Inicializar al cargar la página
+  initAccordion();
+
+  // Reinicializar después de navegación de Astro
+  document.addEventListener("astro:page-load", initAccordion);
+</script>
+
+<style>
+  .accordion-content {
+    will-change: grid-template-rows;
+  }
+</style>

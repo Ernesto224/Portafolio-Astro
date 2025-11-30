@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import "tailwindcss";
+@import "hover.css";
+@plugin "@iconify/tailwind4";
+
+:root {
+  box-sizing: border-box;
+}
+
+@theme {
+  --color-fondo-profundo: #0C0C14;
+  --color-fondo-primario-tarjeta: #1C1C29;
+
+  --color-fondo-claro: #FAFBFD;
+  --color-fondo-secundario-tarjeta: #EDEDF2;
+
+  --color-azul-nebulosa: #176BED;
+  --color-estado-activo: #4F8CF0;
+  --color-estado-clic: #0D4DBE;
+  --color-cian-resplandor-secundary: #00AACC;
+  --color-enlaces-iconos: #0088A0;
+
+  --color-cian-resplandor-ternary: #4DEEF9;
+  --color-resplandor-glow-suave: #80F3F9;
+
+  --color-purpura-tranquilo: #A173E4;
+  --color-purpura-suave: #B599E8;
+
+  --color-rojo-circulo: #FF0000;
+  --color-verde-triangulo: #00FF00;
+
+  --color-rojo-suave: #FA8072;
+  --color-verde-suave: #90EE90;
+
+  --color-texto-claro-principal: #F0F0F5;
+  --color-texto-principal-suave: #BDC1C9;
+
+  --color-texto-oscuro: #1C1C29;
+  --color-texto-secundario-suave: #5A626F;
+
+  --font-dongle: Ubuntu, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-fondo-profundo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-fondo-primario-tarjeta);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-texto-secundario-suave);
+}

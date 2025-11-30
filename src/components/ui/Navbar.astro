@@ -1,0 +1,70 @@
+---
+const sectionItems = [
+  { title: "Home", href: "#home" },
+  { title: "Projects", href: "#projects" },
+  { title: "Contact", href: "#contact" },
+];
+---
+
+<nav
+  class="container mx-auto flex justify-center items-center p-3 text-center text-[1.125rem] font-light"
+>
+  <ul
+    class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6"
+  >
+    {
+      sectionItems.map((sectionItems) => (
+        <>
+          <li class="flex-1 md:flex-none">
+            <a
+              href={sectionItems.href}
+              class="flex-1 md:flex-none hover:text-enlaces-iconos focus:text-estado-clic transition-colors duration-200"
+            >
+              {sectionItems.title}
+            </a>
+          </li>
+        </>
+      ))
+    }
+  </ul>
+</nav>
+
+<script>
+  import { createSectionDetector } from "../../utils/SectionDetector";
+
+  let currentSectionId = "home";
+  const nav = document.querySelector("nav");
+  const navLinks = nav!.querySelectorAll("a");
+
+  const isActive = (href: string): boolean => {
+    return currentSectionId === href;
+  };
+
+  const detector = createSectionDetector({
+    offset: 80,
+    threshold: 0.3,
+    onSectionChange: (sectionId) => {
+      currentSectionId = sectionId;
+
+      navLinks.forEach((link) => {
+        const href = String(link.getAttribute("href")?.replace("#",""));
+
+        if (isActive(href)) {
+          link.classList.remove("text-texto-claro-principal");
+          link.classList.add(
+            "text-estado-activo",
+            "underline", 
+            "underline-offset-8"
+          );
+        } else {
+          link.classList.remove(
+            "text-estado-activo",
+            "underline", 
+            "underline-offset-8"
+          );
+          link.classList.add("text-texto-claro-principal");
+        }
+      });
+    },
+  });
+</script>

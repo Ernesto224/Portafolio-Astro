@@ -1,0 +1,50 @@
+---
+import CardButtom from "./CardButtom.astro";
+
+interface Props {
+  title: string;
+  state?: string;
+  imageSrc?: string;
+}
+const {
+  title,
+  state = "State",
+  imageSrc = "/public/image-placeholder.jpg",
+} = Astro.props as Props;
+---
+
+<article class="w-[90%] overflow-hidden shadow-sm">
+  <div
+    class="w-full h-60 rounded-lg bg-fondo-primario-tarjeta relative flex justify-center px-8 py-6"
+  >
+    <img
+      src={imageSrc}
+      alt="{title}"
+      class="rounded-lg object-cover w-full h-full hvr-float-shadow"
+    />
+  </div>
+
+  <div class="p-4 flex items-center justify-between">
+    <div>
+      <h4 class="text-2xl font-light text-purpura-suave">{title}</h4>
+      <p class="text-texto-principal-suave text-sm">{state}</p>
+    </div>
+    <div class="flex gap-2">
+      <CardButtom
+        href="mailto:ev402648@gmail.com"
+        label="Email"
+        ariaLabel="Send email"
+      >
+        <i class="icon-[fa--code] w-10 h-8"></i>
+      </CardButtom>
+
+      <CardButtom
+        href="https://www.linkedin.com/in/ernesto224/"
+        label="LinkedIn"
+        ariaLabel="Open LinkedIn"
+      >
+        <i class="icon-[streamline-plump--web] w-10 h-8"></i>
+      </CardButtom>
+    </div>
+  </div>
+</article>

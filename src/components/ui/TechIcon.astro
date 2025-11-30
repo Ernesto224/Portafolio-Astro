@@ -1,0 +1,18 @@
+---
+import type { TechIconProps } from "../../types/types.ts";
+
+const {
+  icon = "icon-[devicon--astro]",
+  label = "Technology",
+  ariaLabel = label,
+} = Astro.props as TechIconProps;
+---
+
+<li
+  class="flex items-center gap-1.5 text-[1.125rem] font-light text-texto-principal-suave py-2"
+  aria-label={ariaLabel}
+  title={label}
+>
+  <i class={icon + " w-10 h-10 hvr-grow"}></i>
+  <span class="leading-6 text-nowrap">{label}</span>
+</li>
