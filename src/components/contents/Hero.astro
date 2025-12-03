@@ -1,8 +1,10 @@
 ---
 import IconButton from "../ui/IconButton.astro";
 import TechCarrusel from "../ui/TechCarrusel.astro";
+import { getLenguageObject } from "../../utils/LenguageText";
 
-const technologiesFrontendFrameworks = [
+const textItems = getLenguageObject()?.home;
+const technologies = [
   { icon: "icon-[devicon--html5]", label: "HTML5" },
   { icon: "icon-[devicon--css3]", label: "CSS3" },
   { icon: "icon-[devicon--astro]", label: "Astro" },
@@ -12,21 +14,10 @@ const technologiesFrontendFrameworks = [
   { icon: "icon-[devicon--flutter]", label: "Flutter" },
   { icon: "icon-[devicon--tailwindcss]", label: "Tailwind CSS" },
   { icon: "icon-[devicon--bootstrap]", label: "Bootstrap" },
-];
-
-const technologiesLenguajes = [
   { icon: "icon-[devicon--csharp]", label: "C#" },
   { icon: "icon-[devicon--java]", label: "Java" },
   { icon: "icon-[devicon--javascript]", label: "JavaScript" },
   { icon: "icon-[devicon--typescript]", label: "TypeScript" },
-  { icon: "icon-[devicon--php]", label: "PHP" },
-  { icon: "icon-[devicon--mysql]", label: "MySQL Server" },
-  { icon: "icon-[devicon--microsoftsqlserver]", label: "Microsoft SQL Server" },
-  { icon: "icon-[devicon--sqlite]", label: "SQLite" },
-  { icon: "icon-[devicon--mongodb]", label: "MongoDB" },
-];
-
-const technologiesBackendFrameworks = [
   { icon: "icon-[devicon--dotnetcore]", label: ".NET" },
   { icon: "icon-[devicon--visualstudio]", label: "Visual Studio" },
   { icon: "icon-[devicon--vscode]", label: "VSCode" },
@@ -34,77 +25,64 @@ const technologiesBackendFrameworks = [
   { icon: "icon-[devicon--express]", label: "Express" },
   { icon: "icon-[devicon--prisma]", label: "Prisma" },
   { icon: "icon-[devicon--swagger]", label: "Swagger" },
+  { icon: "icon-[devicon--php]", label: "PHP" },
+  { icon: "icon-[devicon--mysql]", label: "MySQL Server" },
+  { icon: "icon-[devicon--microsoftsqlserver]", label: "Microsoft SQL Server" },
+  { icon: "icon-[devicon--sqlite]", label: "SQLite" },
+  { icon: "icon-[devicon--mongodb]", label: "MongoDB" },
 ];
 ---
 
-{/* Hero section */}
-<div class="flex items-center pt-8 font-light">
-  <div class="max-w-6xl mx-auto px-6 lg:px-0 w-full">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-      <div>
-        <h4 class="text-3xl text-purpura-suave mb-2">Hello, I'm Ernesto</h4>
-        <h1 class="text-7xl leading-16 text-texto-claro-principal">
-          Software developer
-        </h1>
-        <p
-          class="text-[1rem] text-left mt-6 w-[90%] text-texto-principal-suave leading-7 place-self-end"
-        >
-          I am a Full stack Software Developer focused on the architecture and
-          implementation of systems that not only work, but also optimize
-          processes and generate value.
-        </p>
-
-        <div class="mt-8 flex items-center gap-4">
-          <IconButton
-            href="mailto:ev402648@gmail.com"
-            label="Email"
-            ariaLabel="Send email"
-          >
-            <i class="icon-[lucide--mail] w-10 h-10"></i>
-          </IconButton>
-
-          <IconButton
-            href="https://www.linkedin.com/in/ernesto224/"
-            label="LinkedIn"
-            ariaLabel="Open LinkedIn"
-          >
-            <i class="icon-[lucide--linkedin] w-10 h-10"></i>
-          </IconButton>
-
-          <IconButton
-            href="https://github.com/Ernesto224"
-            label="GitHub"
-            ariaLabel="Open GitHub"
-          >
-            <i class="icon-[lucide--github] w-10 h-10"></i>
-          </IconButton>
-
-          <IconButton
-            href="../../../public/CV_Ernesto_Vega_Rodriguez.pdf"
-            label="GitHub"
-            ariaLabel="Open GitHub"
-          >
-            <i class="icon-[pepicons-pencil--cv] w-10 h-10"></i>
-          </IconButton>
-        </div>
-      </div>
-      <div class="relative overflow-hidden">
-        <TechCarrusel
-          technologies={technologiesFrontendFrameworks}
-          reverse={false}
-          delay={0}
-        />
-        <TechCarrusel
-          technologies={technologiesLenguajes}
-          reverse={true}
-          delay={10}
-        />
-        <TechCarrusel
-          technologies={technologiesBackendFrameworks}
-          reverse={false}
-          delay={16}
-        />
-      </div>
+<div>
+  <div class="text-left font-light space-y-4">
+    <h4 class="text-3xl text-purpura-suave my-2">{textItems?.h4}</h4>
+    <div
+      class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4"
+    >
+      <h1 class="text-7xl leading-16 text-texto-claro-principal">
+        {textItems?.h1}
+      </h1>
+      <p
+        class="text-2xl mt-6 w-[90%] text-texto-principal-suave leading-7 place-self-end"
+      >
+        {textItems?.p}
+      </p>
     </div>
+    <div class="flex justify-start gap-2 pt-3 md:pt-6">
+      <IconButton
+        href="mailto:ev402648@gmail.com"
+        label="Email"
+        ariaLabel="Send email"
+      >
+        <i class="icon-[lucide--mail] w-10 h-10"></i>
+      </IconButton>
+
+      <IconButton
+        href="https://www.linkedin.com/in/ernesto224/"
+        label="LinkedIn"
+        ariaLabel="Open LinkedIn"
+      >
+        <i class="icon-[lucide--linkedin] w-10 h-10"></i>
+      </IconButton>
+
+      <IconButton
+        href="https://github.com/Ernesto224"
+        label="GitHub"
+        ariaLabel="Open GitHub"
+      >
+        <i class="icon-[lucide--github] w-10 h-10"></i>
+      </IconButton>
+
+      <IconButton
+        href="../../../public/CV_Ernesto_Vega_Rodriguez.pdf"
+        label="GitHub"
+        ariaLabel="Open GitHub"
+      >
+        <i class="icon-[pepicons-pencil--cv] w-10 h-10"></i>
+      </IconButton>
+    </div>
+  </div>
+  <div class="relative overflow-hidden h-full py-8">
+    <TechCarrusel technologies={technologies} reverse={true} delay={16} />
   </div>
 </div>

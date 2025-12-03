@@ -22,7 +22,7 @@ const ValidatedTextArea = ({
     };
 
     return (
-        <div>
+        <div className="mb-4">
             <label htmlFor={id} className={isValid ? '' : 'text-rojo-suave'}>{label} <span>{required ? '*' : ''}</span> </label>
             <textarea
                 id={id}

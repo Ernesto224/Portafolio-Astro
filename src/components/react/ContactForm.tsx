@@ -1,8 +1,10 @@
 import { useState } from "react";
 import ValidatedInput from "./ValidatedInput";
 import ValidatedTextArea from "./ValidatedTextArea";
+import EmailService from "../../services/Email.service";
 
 const ContactForms = () => {
+    const emailService = new EmailService();
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
     const [errors, setErrors] = useState({ name: '', email: '', message: '' });
     const [validity, setValidity] = useState({});
@@ -53,10 +55,12 @@ const ContactForms = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.stopPropagation();
         e.preventDefault();
+        
         const formData = new FormData();
         console.log(e.target);
         console.log('Form submitted:', formData);
         console.log('Validity:', validity);
+
     };
 
     return (
@@ -97,7 +101,10 @@ const ContactForms = () => {
 
             <button
                 type="submit"
-                className="flex w-full px-6 py-2 text-center bg-fondo-primario-tarjeta cursor-pointer border border-enlaces-iconos text-enlaces-iconos rounded-lg hvr-float-shadow"
+                className="flex w-full px-6 mt-4 py-2 text-center bg-fondo-primario-tarjeta cursor-pointer border 
+                    border-enlaces-iconos text-enlaces-iconos
+                    hover:border-azul-nebulosa hover:text-azul-nebulosa
+                    focus:border-estado-clic focus:text-estado-clic rounded-lg hvr-float"
             >
                 Submit
             </button>

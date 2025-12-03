@@ -1,10 +1,13 @@
 ---
 import IconButton from "./ui/IconButton.astro";
+import { getLenguageObject } from "../utils/LenguageText";
+
+const textItems = getLenguageObject()?.footer;
 ---
 
-<footer class="py-8 md:py-12 font-dongle">
+<footer class="py-8 md:py-12 font-dongle bg-fondo-profundo">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
-    <hr class="border-t border-texto-principal-suave/50 mb-4 md:mb-6" />
+    <hr class="border-t border-[#ffffff10] mb-4 md:mb-6" />
 
     <div class="flex flex-col items-center justify-center gap-2 md:gap-3">
       <div class="text-center space-y-1 md:space-y-2">
@@ -36,10 +39,10 @@ import IconButton from "./ui/IconButton.astro";
         <p
           class="text-xs md:text-sm lg:text-[1rem] font-light text-texto-principal-suave"
         >
-          <strong class="text-purpura-tranquilo">Ernesto Vega Rodriguez</strong>
-          Copyright © 2025. Designed and Developed by
+          <strong class="text-purpura-tranquilo">{textItems?.strong}</strong>
+          {textItems?.p}
           <strong class="text-purpura-tranquilo block sm:inline mt-1 sm:mt-0">
-            Ernesto Vega Rodriguez
+            {textItems?.strong}
           </strong>
         </p>
       </div>
