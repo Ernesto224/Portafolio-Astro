@@ -1,24 +1,28 @@
 ---
 import ContactForm from "../react/ContactForm.tsx";
-import { getLenguageObject } from "../../utils/LenguageText";
-
-const textItems = getLenguageObject()?.contact;
 ---
 
-<section id="contact" class="w-full py-12 border-t border-[#ffffff10]">
+<section id="contact" class="sm:px-28 lg:px-20 px-9 w-full py-12 border-t border-texto-claro-principal/10">
   <div class="max-w-5xl mx-auto">
-    <h3 class="text-3xl font-light mb-2 text-purpura-suave">{textItems?.h3}</h3>
-    <h2 class="text-5xl font-light mb-6 leading-16 text-texto-claro-principal mt-3">
-      {textItems?.h2}
+    <h3 class="md:text-3xl text-2xl font-light mb-2 text-purpura-suave">
+      Empezemos a hablar
+    </h3>
+
+    <h2
+      class="md:text-5xl text-4xl font-light mb-6 leading-16 text-texto-claro-principal mt-3"
+    >
+      Contactame
     </h2>
+
     <div
-      class="container mx-auto px-6 lg:px-0 max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-start"
+      class="container mx-auto md:px-6 lg:px-0 max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8 items-start"
     >
       <div>
         <p
-          class="text-[1.2rem] font-light text-texto-principal-suave leading-7 mt-4"
+          class="md:text-lg text-md font-light text-texto-principal-suave leading-7 mt-4"
         >
-          {textItems?.p}
+          Si tienes alguna pregunta o una propuesta de un proyecto, sientete
+          libre de contactarme, y en cuanto sea posible te contactare.
         </p>
       </div>
 

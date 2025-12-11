@@ -1,22 +1,19 @@
 ---
-import { getLenguageObject } from "../../utils/LenguageText";
-
-const textItems = getLenguageObject()?.navbar;
-
-const sectionIcons = [
-  { href: "#home", icon: "icon-[heroicons--home]" },
-  { href: "#projects", icon: "icon-[streamline--projector-board]" },
-  { href: "#contact", icon: "icon-[lucide--contact]" },
+const sectionItems = [
+  { title: "Inicio", href: "#home", icon: "icon-[heroicons--home]" },
+  {
+    title: "Proyectos",
+    href: "#projects",
+    icon: "icon-[streamline--projector-board]",
+  },
+  { title: "Contacto", href: "#contact", icon: "icon-[lucide--contact]" },
 ];
-
-const sectionItems = textItems?.sectionTitles.map((item, index) => ({
-  ...item,
-  ...sectionIcons[index]
-}));
 ---
 
 <nav
-  class="container mx-auto flex justify-center items-center p-3 text-center text-[1.125rem] font-light backdrop-blur-xl border border-cian-resplandor-secundary/0 rounded-full transition-all duration-500 ease-in-out w-[80%]"
+  class="container mx-auto flex justify-center items-center p-3 text-center
+    md:text-lg text-xs font-light backdrop-blur-xl border border-cian-resplandor-secundary/0
+    md:rounded-full transition-all duration-500 ease-in-out xl:w-[80%] lg:w-[90%] md:w-[90%] w-[100%]"
 >
   <ul
     class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6"
@@ -27,9 +24,14 @@ const sectionItems = textItems?.sectionTitles.map((item, index) => ({
           <li class="flex-1 md:flex-none">
             <a
               href={sectionItems.href}
-              class="flex items-center gap-2 flex-1 md:flex-none text-texto-claro-principal hover:text-azul-nebulosa focus:text-estado-clic transition-colors duration-200"
+              class="flex flex-col items-center gap-2 flex-1 md:flex-none 
+                text-texto-claro-principal hover:text-azul-nebulosa 
+                focus:text-estado-clic transition-colors duration-200"
             >
-              <i class={`flex-shrink-0 w-6 h-6 ${sectionItems.icon}`} />
+              <i
+                class={`md:hidden flex items-center justify-center w-6 h-6 ${sectionItems.icon}`}
+              />
+
               <span>{sectionItems.title}</span>
             </a>
           </li>
@@ -77,4 +79,81 @@ const sectionItems = textItems?.sectionTitles.map((item, index) => ({
       });
     },
   });
+</script>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const header = document.getElementById("main-header");
+  const navbar = document.querySelector("nav");
+
+  if (header && navbar) {
+    // Rang #1
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "top top",
+      scrub: 1,
+      onEnter: () => {
+        navbar.classList.remove(
+          "xl:w-[80%]",
+          "lg:w-[90%]",
+          "md:w-[90%]",
+          "border-cian-resplandor-secundary/0"
+        );
+        navbar.classList.add(
+          "xl:w-[60%]",
+          "lg:w-[70%]",
+          "md:w-[70%]",
+          "border-cian-resplandor-secundary/30"
+        );
+      },
+      onLeaveBack: () => {
+        navbar.classList.remove(
+          "xl:w-[60%]",
+          "lg:w-[70%]",
+          "md:w-[70%]",
+          "border-cian-resplandor-secundary/30"
+        );
+        navbar.classList.add(
+          "xl:w-[80%]",
+          "lg:w-[90%]",
+          "md:w-[90%]",
+          "border-cian-resplandor-secundary/0"
+        );
+      },
+    });
+
+    // Rang #2
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "300px top",
+      scrub: 1,
+      onEnter: () => {
+        navbar.classList.remove("xl:w-[60%]", "lg:w-[70%]", "md:w-[70%]");
+        navbar.classList.add("xl:w-[50%]", "lg:w-[60%]", "md:w-[60%]");
+      },
+      onLeaveBack: () => {
+        navbar.classList.remove("xl:w-[50%]", "lg:w-[60%]", "md:w-[60%]");
+        navbar.classList.add("xl:w-[60%]", "lg:w-[70%]", "md:w-[70%]");
+      },
+    });
+
+    // Rang #3
+    ScrollTrigger.create({
+      trigger: "body",
+      start: "600px top",
+      scrub: 1,
+      onEnter: () => {
+        navbar.classList.remove("xl:w-[50%]");
+        navbar.classList.add("xl:w-[40%]");
+      },
+      onLeaveBack: () => {
+        navbar.classList.remove("xl:w-[40%]");
+        navbar.classList.add("xl:w-[50%]");
+      },
+    });
+  }
 </script>

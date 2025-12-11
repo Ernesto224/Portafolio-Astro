@@ -10,4 +10,4 @@ const validateEnv = () => {
     }
 };
 
-export const Env = validateEnv(); 
+export const Env = validateEnv();

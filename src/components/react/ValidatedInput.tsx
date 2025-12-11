@@ -9,6 +9,7 @@ const ValidatedInput = ({
     value,
     error,
     required = true,
+    maxLength,
     validation,
     onChange
 }: InputInfo) => {
@@ -24,6 +25,7 @@ const ValidatedInput = ({
     return (
         <div className="mb-4">
             <label htmlFor={id} className={isValid ? '' : 'text-rojo-suave'}>{label} <span>{required ? '*' : ''}</span> </label>
+
             <input
                 id={id}
                 name={id}
@@ -33,10 +35,12 @@ const ValidatedInput = ({
                 onBlur={handleChange}
                 onChange={handleChange}
                 required={required}
+                maxLength={maxLength}
                 className={`mt-1 block w-full rounded-md bg-fondo-primario-tarjeta p-2 text-texto-claro-principal
                     border border-enlaces-iconos outline-enlaces-iconos focus-visible:outline-1 focus-visible:outline-offset-2
                     ${isValid ? '' : 'border-rojo-suave outline-rojo-suave'}`}
             />
+
             {error && <span className="mt-1 text-rojo-suave">{error}</span>}
         </div>
     );

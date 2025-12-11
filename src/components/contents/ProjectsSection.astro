@@ -1,20 +1,60 @@
 ---
 import ProjectCard from "../ui/ProjectCard.astro";
-import { getLenguageObject } from "../../utils/LenguageText";
 
-const textItems = getLenguageObject()?.projects;
+const cardItems = [
+  {
+    title: "God Of War Weapon API",
+    state: "En Produccion",
+    imageSrc:
+      "https://res.cloudinary.com/dks1ifnxa/image/upload/v1764623797/god-of-war-weapon-api-projects-cover_xz5drb.jpg",
+    deployHref: "https://god-of-war-weapon-api.vercel.app/api/swagger/",
+    gitHref: "https://github.com/Ernesto224/God-Of-War-Weapon-API",
+  },
+  {
+    title: "God Of War Weapon API",
+    state: "En Produccion",
+    imageSrc:
+      "https://res.cloudinary.com/dks1ifnxa/image/upload/v1764623797/god-of-war-weapon-api-projects-cover_xz5drb.jpg",
+    deployHref: "https://god-of-war-weapon-api.vercel.app/api/swagger/",
+    gitHref: "https://github.com/Ernesto224/God-Of-War-Weapon-API",
+  },
+  {
+    title: "God Of War Weapon API",
+    state: "En Produccion",
+    imageSrc:
+      "https://res.cloudinary.com/dks1ifnxa/image/upload/v1764623797/god-of-war-weapon-api-projects-cover_xz5drb.jpg",
+    deployHref: "https://god-of-war-weapon-api.vercel.app/api/swagger/",
+    gitHref: "https://github.com/Ernesto224/God-Of-War-Weapon-API",
+  },
+  {
+    title: "God Of War Weapon API",
+    state: "En Produccion",
+    imageSrc:
+      "https://res.cloudinary.com/dks1ifnxa/image/upload/v1764623797/god-of-war-weapon-api-projects-cover_xz5drb.jpg",
+    deployHref: "https://god-of-war-weapon-api.vercel.app/api/swagger/",
+    gitHref: "https://github.com/Ernesto224/God-Of-War-Weapon-API",
+  },
+];
 ---
 
-<section id="projects" class="py-12 border-t border-[#ffffff10]">
+<section
+  id="projects"
+  class="bg-fondo-profundo sm:px-28 lg:px-20 px-9 py-12 border-t border-texto-claro-principal/10"
+>
   <div class="max-w-5xl mx-auto">
-    <h3 class="text-3xl font-light mb-2 text-purpura-suave">{textItems?.h3}</h3>
-    <h2 class="text-5xl font-light leading-16 text-texto-claro-principal mb-8">
-      {textItems?.h2}
+    <h3 class="md:text-3xl text-2xl font-light mb-2 text-purpura-suave">
+      Mi Trabajo
+    </h3>
+
+    <h2
+      class="md:text-5xl text-4xl font-light leading-16 text-texto-claro-principal mb-8"
+    >
+      Proyectos
     </h2>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       {
-        textItems?.cardItems.map((item) => (
+        cardItems.map((item) => (
           <ProjectCard
             title={item.title}
             state={item.state}
@@ -35,7 +75,8 @@ const textItems = getLenguageObject()?.projects;
         href="https://github.com/Ernesto224"
       >
         <span class="flex flex-1 items-center justify-center self-center p-1">
-          {textItems?.endButtom}
+          Mas proyectos en
+
           <i class="icon-[lucide--github] w-10 h-10 ml-2"></i>
         </span>
       </a>

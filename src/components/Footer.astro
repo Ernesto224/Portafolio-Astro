@@ -1,11 +1,8 @@
 ---
 import IconButton from "./ui/IconButton.astro";
-import { getLenguageObject } from "../utils/LenguageText";
-
-const textItems = getLenguageObject()?.footer;
 ---
 
-<footer class="py-8 md:py-12 font-dongle bg-fondo-profundo">
+<footer class="md:py-12 pb-24 font-dongle">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
     <hr class="border-t border-[#ffffff10] mb-4 md:mb-6" />
 
@@ -36,14 +33,14 @@ const textItems = getLenguageObject()?.footer;
             <i class="icon-[lucide--github] w-10 h-10"></i>
           </IconButton>
         </div>
-        <p
-          class="text-xs md:text-sm lg:text-[1rem] font-light text-texto-principal-suave"
-        >
-          <strong class="text-purpura-tranquilo">{textItems?.strong}</strong>
-          {textItems?.p}
-          <strong class="text-purpura-tranquilo block sm:inline mt-1 sm:mt-0">
-            {textItems?.strong}
-          </strong>
+
+        <p class="text-sm md:text-[1rem] font-light text-texto-principal-suave">
+          <strong class="text-purpura-tranquilo">Ernesto Vega Rodriguez</strong>
+
+          <span class="block mt-1"
+            >Copyright © 2025. Diseñado y desarrollado por Ernesto Vega
+            Rodriguez</span
+          >
         </p>
       </div>
     </div>

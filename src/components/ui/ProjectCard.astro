@@ -11,10 +11,10 @@ const {
 } = Astro.props as CardProjectProps;
 ---
 
-<article class="w-full rounded-lg bg-fondo-primario-tarjeta overflow-hidden shadow-sm">
-  <div
-    class="w-full h-60 relative flex justify-center px-4 pt-4"
-  >
+<article
+  class="w-full rounded-lg bg-fondo-primario-tarjeta overflow-hidden shadow-sm"
+>
+  <div class="w-full h-60 relative flex justify-center px-4 pt-4">
     <img
       src={imageSrc}
       alt={title}
@@ -23,7 +23,8 @@ const {
   </div>
   <div class="p-4 flex items-center justify-between">
     <div>
-      <h4 class="text-2xl font-light text-purpura-suave">{title}</h4>
+      <h4 class="lg:text-2xl text-md font-light text-purpura-suave">{title}</h4>
+
       <p class="text-texto-principal-suave text-sm">{state}</p>
     </div>
     <div class="flex gap-2">

@@ -1,15 +1,16 @@
 import ky from 'ky';
 import { Env } from '../config/Env';
-import type { EmailTemplateParams, ApiResponse } from "../types/types";
+import type { EmailTemplateParams } from "../types/types";
 
 class EmailService {
-    private baseUrl = Env.EMAIL_JS_API_REST_URL;
+    private httpClient = ky;
+    private baseUrl = new URL(Env.EMAIL_JS_API_REST_URL);
     private userId = Env.USER_ID;
     private accessToken = Env.ACCESS_TOKEN;
     private service = Env.SERVICE_ID;
     private template = Env.TEMPLATE_ID;
 
-    public sendEmail = async (params: EmailTemplateParams) => {
+    public sendEmail = async (params: EmailTemplateParams): Promise<boolean> => {
 
         try {
 
@@ -21,27 +22,15 @@ class EmailService {
                 template_params: params
             };
 
-            const response = await fetch(`${this.baseUrl}/send`, {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(body)
-            });
+            const response = await this.httpClient.post<string>('send', { prefixUrl: this.baseUrl, json: body });
 
-            console.log(response);
-
-            if (!response.ok) {
-
-            }
-
+            return response.ok.valueOf();
 
         } catch (error) {
 
+            throw new Error("Error to send a request. Try again later.");
         }
-
-    }
-
+    };
 
 }
 

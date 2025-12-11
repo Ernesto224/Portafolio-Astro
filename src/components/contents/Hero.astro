@@ -1,9 +1,7 @@
 ---
 import IconButton from "../ui/IconButton.astro";
 import TechCarrusel from "../ui/TechCarrusel.astro";
-import { getLenguageObject } from "../../utils/LenguageText";
 
-const textItems = getLenguageObject()?.home;
 const technologies = [
   { icon: "icon-[devicon--html5]", label: "HTML5" },
   { icon: "icon-[devicon--css3]", label: "CSS3" },
@@ -33,56 +31,65 @@ const technologies = [
 ];
 ---
 
-<div>
-  <div class="text-left font-light space-y-4">
-    <h4 class="text-3xl text-purpura-suave my-2">{textItems?.h4}</h4>
-    <div
-      class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4"
+<div class="text-left font-light space-y-4">
+  <h4 class="md:text-3xl text-2xl text-purpura-suave my-2">
+    Hola, soy Ernesto
+  </h4>
+
+  <div
+    class="flex flex-col lg:flex-row lg:items-center space-y-4 lg:space-y-0 lg:space-x-8 md:gap-4"
+  >
+    <h1
+      class="md:text-7xl text-5xl md:leading-16 leading-14 text-texto-claro-principal"
     >
-      <h1 class="text-7xl leading-16 text-texto-claro-principal">
-        {textItems?.h1}
-      </h1>
-      <p
-        class="text-2xl mt-6 w-[90%] text-texto-principal-suave leading-7 place-self-end"
-      >
-        {textItems?.p}
-      </p>
-    </div>
-    <div class="flex justify-start gap-2 pt-3 md:pt-6">
-      <IconButton
-        href="mailto:ev402648@gmail.com"
-        label="Email"
-        ariaLabel="Send email"
-      >
-        <i class="icon-[lucide--mail] w-10 h-10"></i>
-      </IconButton>
+      Desarrollador de software
+    </h1>
 
-      <IconButton
-        href="https://www.linkedin.com/in/ernesto224/"
-        label="LinkedIn"
-        ariaLabel="Open LinkedIn"
-      >
-        <i class="icon-[lucide--linkedin] w-10 h-10"></i>
-      </IconButton>
-
-      <IconButton
-        href="https://github.com/Ernesto224"
-        label="GitHub"
-        ariaLabel="Open GitHub"
-      >
-        <i class="icon-[lucide--github] w-10 h-10"></i>
-      </IconButton>
-
-      <IconButton
-        href="../../../public/CV_Ernesto_Vega_Rodriguez.pdf"
-        label="GitHub"
-        ariaLabel="Open GitHub"
-      >
-        <i class="icon-[pepicons-pencil--cv] w-10 h-10"></i>
-      </IconButton>
-    </div>
+    <p
+      class="md:text-lg text-md md:mt-6 mt-4 lg:w-[90%] w-full text-texto-principal-suave leading-7 place-self-end"
+    >
+      Me destaco por mi disposicion para trabajar en equipo, mi actitud
+      proactiva y mi motivacion constante por aprender nuevas tecnologıas.
+      Comprometido con el crecimiento profesional y con aportar valor mediante
+      la investigacion.
+    </p>
   </div>
-  <div class="relative overflow-hidden h-full py-8">
-    <TechCarrusel technologies={technologies} reverse={true} delay={16} />
+
+  <div class="flex justify-start gap-2 pt-3 md:pt-6">
+    <IconButton
+      href="mailto:ev402648@gmail.com"
+      label="Correo"
+      ariaLabel="Enviar correo"
+    >
+      <i class="icon-[lucide--mail] w-10 h-10"></i>
+    </IconButton>
+
+    <IconButton
+      href="https://www.linkedin.com/in/ernesto224/"
+      label="LinkedIn"
+      ariaLabel="Abrir LinkedIn"
+    >
+      <i class="icon-[lucide--linkedin] w-10 h-10"></i>
+    </IconButton>
+
+    <IconButton
+      href="https://github.com/Ernesto224"
+      label="GitHub"
+      ariaLabel="Abrir GitHub"
+    >
+      <i class="icon-[lucide--github] w-10 h-10"></i>
+    </IconButton>
+
+    <IconButton
+      href="../../../public/CV_Ernesto_Vega_Rodriguez.pdf"
+      label="CV"
+      ariaLabel="Abrir CV"
+    >
+      <i class="icon-[pepicons-pencil--cv] w-10 h-10"></i>
+    </IconButton>
   </div>
+</div>
+
+<div class="relative overflow-hidden h-full py-8">
+  <TechCarrusel technologies={technologies} reverse={true} delay={16} />
 </div>

@@ -58,6 +58,7 @@ export interface InputInfo {
   value: string;
   error?: string;
   required?: boolean;
+  maxLength?: number;
   validation?: (value: string) => boolean;
   onChange: (value: string, isValid: boolean) => void;
 }
