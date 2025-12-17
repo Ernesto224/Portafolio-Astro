@@ -1,18 +1,17 @@
 ---
-import "../styles/global.css";
-import Prisma3DModel from "../components/ui/Prisma3DModel.astro";
+import { SITE_CONTENT } from "../config/index";
+import Hero from "../components/contents/HeroSection.astro";
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Main from "../components/Main.astro";
-import Footer from "../components/Footer.astro";
+import Experience from "../components/contents/Experience.astro";
+import Projects from "../components/contents/ProjectsSection.astro";
+import About from "../components/contents/About.astro";
+
+import "../styles/global.css";
 ---
 
 <Layout>
-  <Prisma3DModel />
-
-  <Header />
-
-  <Main />
-
-  <Footer />
+  <Hero {...SITE_CONTENT.hero} />
+  <Experience experience={SITE_CONTENT.experience} />
+  <Projects projects={SITE_CONTENT.projects} />
+  <About {...SITE_CONTENT.about} name={SITE_CONTENT.hero.name} />
 </Layout>

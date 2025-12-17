@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import "tailwindcss";
-@import "hover.css";
 @plugin "@iconify/tailwind4";
 
 :root {
@@ -8,52 +6,54 @@
 }
 
 @theme {
-  --color-fondo-profundo: #0C0C14;
-  --color-fondo-primario-tarjeta: #1C1C29;
+  --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
+  --font-serif: "Gabarito Variable", ui-serif, serif;
 
-  --color-fondo-claro: #FAFBFD;
-  --color-fondo-secundario-tarjeta: #EDEDF2;
+  --color-primary: #2563eb;
+  --color-neutral: #94a3b8;
+  --color-white: #e2e8f0;
+  --color-black: #0e141b;
 
-  --color-azul-nebulosa: #176BED;
-  --color-estado-activo: #4F8CF0;
-  --color-estado-clic: #0D4DBE;
-  --color-cian-resplandor-secundary: #00AACC;
-  --color-enlaces-iconos: #0088A0;
+  --text-xs: 0.875rem;
+  --text-xs--line-height: 1.125rem;
+  --text-sm: 1rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.625rem;
+  --text-lg: 1.25rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.5rem;
+  --text-xl--line-height: 1.813rem;
+  --text-2xl: 1.75rem;
+  --text-2xl--line-height: 2.125rem;
+  --text-3xl: 2rem;
+  --text-3xl--line-height: 2.375rem;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 2.688rem;
+  --text-5xl: 2.5rem;
+  --text-5xl--line-height: 3rem;
+  --text-6xl: 3rem;
+  --text-6xl--line-height: 3.625rem;
+  --text-7xl: 3.75rem;
+  --text-7xl--line-height: 1;
+  --text-8xl: 4.5rem;
+  --text-8xl--line-height: 4.875rem;
+  --text-9xl: 6rem;
+  --text-9xl--line-height: 6.625rem;
 
-  --color-cian-resplandor-ternary: #4DEEF9;
-  --color-resplandor-glow-suave: #80F3F9;
+  --tracking-tightest: -2px;
+  --tracking-tighter: -1px;
+  --tracking-tight: -0.25px;
 
-  --color-purpura-tranquilo: #A173E4;
-  --color-purpura-suave: #B599E8;
+  --animate-slide-in: slide-in 600ms ease both;
 
-  --color-rojo-circulo: #FF0000;
-  --color-verde-triangulo: #00FF00;
+  @keyframes slide-in {
+    10% {
+      transform: translateY(-100%);
+    }
 
-  --color-rojo-suave: #FA8072;
-  --color-verde-suave: #90EE90;
-
-  --color-texto-claro-principal: #F0F0F5;
-  --color-texto-principal-suave: #BDC1C9;
-
-  --color-texto-oscuro: #1C1C29;
-  --color-texto-secundario-suave: #5A626F;
-
-  --font-dongle: Ubuntu, sans-serif;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-fondo-profundo);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-fondo-primario-tarjeta);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-texto-secundario-suave);
+    100% {
+      transform: translateY(0);
+    }
+  }
 }

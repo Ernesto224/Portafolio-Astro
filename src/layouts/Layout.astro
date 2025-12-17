@@ -1,16 +1,44 @@
+---
+import Header from "../components/Header.astro";
+import "@fontsource/be-vietnam-pro";
+import "@fontsource-variable/gabarito";
+import { SITE_CONFIG } from "../config/index";
+import Footer from "../components/Footer.astro";
+
+const {
+  title,
+  description,
+  siteLogo,
+  navLinks,
+  lang,
+  author,
+  socialLinks,
+  socialImage,
+  canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
+} = SITE_CONFIG;
+
+const ogImgUrl = canonicalURL + socialImage;
+---
+
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang={lang} class="scroll-pt-16 scroll-smooth">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
     <meta name="viewport" content="width=device-width" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
-    <title>Ernesto Vega Rodriguez</title>
+    <title>{title}</title>
   </head>
-  <body class="bg-fondo-profundo text-texto-claro-principal font-dongle">
-    <slot />
+  <body class="bg-black font-sans">
+    <Header siteLogo={siteLogo} navLinks={navLinks} />
+    <main class="mx-auto max-w-3xl px-5">
+      <slot />
+    </main>
+    <Footer author={author} socialLinks={socialLinks} />
   </body>
 </html>
