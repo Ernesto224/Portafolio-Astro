@@ -1,16 +1,16 @@
-import type { SiteConfig, SiteContent } from "../types/types";
+import type { SiteConfig, SiteContent } from "@types";
 
 export const SITE_CONFIG: SiteConfig = {
-    title: "Alejandro Múnez — Mobile & Web Developer",
-    author: "Alejandro Múnez Cuntez",
+    title: "Ernesto Vega — Mobile & Desarrollador de software",
+    author: "Ernesto Vega Rodriguez",
     description:
-        "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    lang: "en",
-    siteLogo: "/public/Assets/site-logo.jpg",
+        "Soy un desarrollador de software de Cartago, Costa Rica. Me enfoco en escritura de código mantenible, buenas prácticas de arquitectura y colaboración en equipo.",
+    lang: "es",
+    siteLogo: "/Assets/site-logo.jpg",
     navLinks: [
-        { text: "Experience", href: "#experience" },
-        { text: "Projects", href: "#projects" },
-        { text: "About", href: "#about" },
+        { text: "Experiencia", href: "#experience" },
+        { text: "Proyectos", href: "#projects" },
+        { text: "Sobre Mi", href: "#about" },
     ],
     socialLinks: [
         { text: "LinkedIn", href: "https://www.linkedin.com/in/ernesto224/" },
@@ -18,7 +18,7 @@ export const SITE_CONFIG: SiteConfig = {
         { text: "Gmail", href: "mailto:ev402648@gmail.com" },
     ],
     socialImage: "/zen-og.png",
-    canonicalURL: "https://astro-zen.vercel.app",
+    canonicalURL: "https://ernesto-vega-portafolio.vercel.app",
 };
 
 export const SITE_CONTENT: SiteContent = {
@@ -31,33 +31,36 @@ export const SITE_CONTENT: SiteContent = {
     },
     experience: [
         {
-            company: "Zalmart",
-            position: "Lead Android Developer",
-            startDate: "May 2018",
-            endDate: "Sept 2020",
+            company: "CyberProCr",
+            position: "Desarrollador FullStack",
+            startDate: "Ago 2025",
+            endDate: "Dic 2025",
             summary: [
-                "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-                "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-                "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+                "Ejecuté el análisis de requerimientos y el desarrollo de módulos CRUD para la gestión de empresas, utilizando metodologías ágiles y herramientas como Trello para garantizar una estructura de backend sólida, escalable y alineada con las necesidades del negocio.",
+                "Refactoricé la interfaz de usuario del proyecto Lawai mediante Tailwind CSS, implementando un diseño responsive, soporte para temas claro/oscuro y sistemas de notificaciones dinámicas que mejoraron significativamente la usabilidad y la experiencia del usuario final.",
+                "Diseñé e implementé controladores avanzados para la gestión de estados de plantillas y flujos de conversación en tiempo real, optimizando la administración de catálogos y los sistemas de filtrado para agilizar la interacción con los servicios de inteligencia artificial."
             ],
         },
         {
-            company: "Bankit",
-            position: "Mobile Developer",
-            startDate: "Feb 2017",
-            endDate: "May 2018",
+            company: "Universidad de Costa Rica",
+            position: "Estudiante de bachillerato",
+            startDate: "Sep 2024",
+            endDate: "Nov 2024",
             summary: [
-                "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-                "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+                "Lideré y colaboré en el desarrollo utilizando metodologías Scrum y RUP, gestionando tareas a través de Trello.",
+                "Desarrollé la estructura de bases de datos e implementé funciones relacionadas.",
+                "Implementé secciones del frontend en Angular y desarrollé múltiples servicios RESTful en .NET.",
             ],
         },
         {
-            company: "Driveer",
-            position: "Frontend Developer",
-            startDate: "Jun 2015",
-            endDate: "Oct 2016",
+            company: "Universidad de Costa Rica",
+            position: "Estudiante de bachillerato",
+            startDate: "Mar 2025",
+            endDate: "Jun 2025",
             summary:
-                "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
+                `En este periodo se trabajo principlamente en un proyecto de Sistema de Hoteleria en el que implementé: seguridad en la aplicación mediante autenticación JWT, 
+                 colaboré en el desarrollo de la estructura de bases de datos y 
+                 Implementé secciones del frontend en Angular y desarrollé múltiples servicios RESTful en .NET.`,
         },
     ],
     projects: [
@@ -66,7 +69,7 @@ export const SITE_CONTENT: SiteContent = {
             summary: "A music streaming app that emulates Spotify's core features.",
             linkPreview: "/",
             linkSource: "https://github.com/immois/astro-zen",
-            image: "/public/Projects/spotifu.png",
+            image: "/Projects/spotifu.png",
         },
         {
             name: "Shopp App",
@@ -82,14 +85,21 @@ export const SITE_CONTENT: SiteContent = {
             linkSource: "https://github.com/immois/astro-zen",
             image: "/clone-ig.png",
         },
+        {
+            name: "ClonTagram",
+            summary: "A social network that replicates the features of Instagram",
+            linkPreview: "/",
+            linkSource: "https://github.com/immois/astro-zen",
+            image: "/clone-ig.png",
+        },
     ],
     about: {
-        description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
-
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
-    `,
-        image: "/public/Assets/personal-phote.jpg",
+        description: `Hola, soy Ernesto Vega, desarrollador de software enfocado en la entrega de soluciones eficientes y de alta calidad. 
+            Cuento con una sólida formación academica que me ha permitido enfrentar desafíos complejos con una mentalidad de aprendizaje continuo. 
+            Mi especialidad es el desarrollo backend, donde diseño arquitecturas robustas y mantenibles para satisfacer las exigencias del 
+            software moderno, integrando siempre un interés profundo por la seguridad y los detalles técnicos del sistema. Me caracterizo por 
+            mi actitud proactiva, disposición para el trabajo en equipo y compromiso con la excelencia profesional.`,
+        image: "/Assets/personal-phote.jpg",
     },
 };
 

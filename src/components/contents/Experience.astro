@@ -1,6 +1,6 @@
 ---
-import Section from "../Section.astro";
-import type { ExperienceProps } from "../../types/types";
+import Section from "@components/Section.astro";
+import type { ExperienceProps } from "@types";
 
 interface Props {
   experience: ExperienceProps[];
@@ -9,26 +9,29 @@ interface Props {
 const { experience } = Astro.props;
 ---
 
-<Section text="Work Experience" href="experience">
+<Section text="Experiencia de Trabajo" href="experience">
   {
     experience.map(({ company, position, startDate, endDate, summary }) => (
       <div class="mb-10">
         <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
           {company}
         </h3>
+
         <div class="flex flex-col items-start pb-5">
           <h4 class="mb-0.5 font-serif text-2xl font-medium text-primary">
             {position}
           </h4>
-          <span class="pb-[2px] text-sm text-white/70">
+
+          <span class="pb-0.5 text-sm text-white/70">
             {startDate} — {endDate}
           </span>
         </div>
+
         {Array.isArray(summary) ? (
           <ul class="list-none">
             {summary.map((log) => (
               <li class="relative mb-3 pl-8 text-base text-neutral">
-                <i class="absolute top-1 left-0 icon-[simple-line-icons--check] pr-1"></i>
+                <i class="absolute top-1 left-0 icon-[simple-line-icons--check]" />
                 {log}
               </li>
             ))}
